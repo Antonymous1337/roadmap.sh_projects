@@ -6,4 +6,4 @@ If you find my work interesting, please contact me at <a href="mailto:holshouser
 
 The above email link may not work if you don't have a default email handler for your device set up.
 
-To access the home page for all of these projects, <a href="https://antonymous1337.github.io/roadmap.sh_projects/">you can find it here</a>.
+To access the home page for all of these projects, <a href="https://antonymous1337.github.io/roadmap.sh_projects/" target="_blank">you can find it here</a>.
