@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antony's Changelog Component</title>
+    <style>
+        @media(prefers-color-scheme: dark) {
+            :root {
+                --row-gap: 32px;
+                --background-color: black;
+                --text-color: rgb(228, 228, 228);
+                --timeline-decoration-color: rgb(255, 140, 0);
+            }
+        }
+
+        @media(prefers-color-scheme: light) {
+            :root {
+                --row-gap: 32px;
+                --background-color: white;
+                --text-color: black;
+                --timeline-decoration-color: rgb(255, 102, 0);
+            }
+        }
+
+        body, html {
+            margin: 0px;
+            width: 100%;
+            overflow: hidden;
+            background: var(--background-color);
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        time, p {
+            margin: 0px;
+            word-break: normal;
+            color: var(--text-color);
+        }
+        time {
+            text-align: right;
+        }
+        button {
+            width: 100%;
+            margin-top: 64px;
+            padding: 15px 32px;
+            border-radius: 16px;
+            border: 1px solid rgba(0, 0, 0, 0.34);
+            background-image: linear-gradient(to bottom right, white, rgb(224, 224, 224));
+        }
+        main {
+            background-image: linear-gradient(to bottom right, rgba(85, 206, 254, 0.393), rgb(0, 183, 255, 0.393));
+            border-radius: 32px;
+            padding: 48px 32px;
+            box-shadow: 16px 16px 42px 4px rgba(35, 35, 35, 0.452);
+        }
+        .changelog-container {
+            display: grid;
+            grid-template-columns: 100px 50px minmax(min-content, 300px);
+            grid-template-rows: auto;
+            align-items: center;
+            row-gap: var(--row-gap);
+            
+        }
+        .changelog-timeline-item {
+            height: 100%;
+            display: grid;
+            align-items: center;
+            justify-items: center;
+        }
+        .changelog-circle, .changelog-line {
+            grid-column: 1;
+            grid-row: 1;
+        }
+        .changelog-circle {
+            height: 16px;
+            width: 16px;
+            border-radius: 8px;
+            background-color: var(--timeline-decoration-color);
+        }
+        .changelog-line {
+            padding: calc(var(--row-gap)/1.5) 0px;
+            height: 100%;
+            width: 4px;
+            background-color: var(--timeline-decoration-color);
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="changelog-container">
+            <time>January 1st, 2024</time>
+            <div class="changelog-timeline-item">
+                <div class="changelog-line"></div>
+                <div class="changelog-circle"></div>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin malesuada, turpis eget placerat lobortis, nisi erat varius erat, in imperdiet eros nibh in enim.</p>
+            <time>March 32nd, 2024</time>
+            <div class="changelog-timeline-item">
+                <div class="changelog-line"></div>
+                <div class="changelog-circle"></div>
+            </div>
+            <p>Quisque tincidunt nisl non suscipit vestibulum. Morbi ullamcorper mauris ac metus ornare rhoncus. Nullam commodo non neque ac blandit. Suspendisse sed nibh tellus. Fusce ac pharetra nulla, eu facilisis nisi. </p>
+            <time>September -3rd, 2024</time>
+            <div class="changelog-timeline-item">
+                <div class="changelog-line"></div>
+                <div class="changelog-circle"></div>
+            </div>
+            <p>Donec ultrices fermentum mi, eu tempor velit molestie sed. Vestibulum tempor, nisl sit amet finibus efficitur, lorem erat ultricies turpis, at faucibus velit dui eget mauris. Cras venenatis metus neque, sit amet dignissim nisi aliquet pellentesque. </p>
+        </div>
+        <button onclick="alert('This isn\'t implemented!')">View Full Changelog</button>
+    </main>
+</body>
+</html>
