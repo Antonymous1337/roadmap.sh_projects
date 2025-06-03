@@ -1,0 +1,56 @@
+.resume-container {
+    display: flex;
+}
+
+.resume-item {
+    padding: 16px
+}
+
+@media (min-width: 800px) {
+    .resume-item {
+        width: 33%;
+        border-left: 1px solid lightslategray;
+    }
+}
+
+@media (max-width: 800px) {
+    .resume-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .resume-item {
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .resume-item + .resume-item {
+        border-top: 1px solid lightslategray;
+    }
+}
+
+.resume-item-header {
+    text-align: center;
+}
+
+.review-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 30%));
+    justify-content: space-evenly;
+    row-gap: 32px;
+    padding-bottom: 32px;
+}
+
+.review-item {
+    padding: 0 8px;
+}
+
+.review-author {
+    text-align: center;
+}
+
+.review-header {
+    text-align: center;
+    padding-top: 32px;
+    padding-bottom: 16px;
+}

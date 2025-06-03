@@ -1,0 +1,16 @@
+.input-field {
+    padding: 16px 0px;
+}
+
+button {
+    min-width: 100px;
+    height: 40px;
+    margin-bottom: 16px;
+}
+
+footer {
+    padding: 32px 10%;
+    background-image: linear-gradient(to bottom right, var(--primary-gradient-start), var(--primary-gradient-end));
+    box-shadow: 0 1px 20px 4px var(--shadow-color);
+    font-size: large;
+}

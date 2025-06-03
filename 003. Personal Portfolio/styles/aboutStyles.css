@@ -1,0 +1,10 @@
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 10%;
+    align-items: center;
+}
+
+main > p {
+    max-width: 800px;
+}

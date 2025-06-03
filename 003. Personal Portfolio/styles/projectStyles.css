@@ -1,0 +1,28 @@
+.project-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+    padding-bottom: 32px;
+}
+
+.project-item-container:nth-child(2n-1) {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 16px 10%;
+    background-image: linear-gradient(to bottom right, var(--primary-gradient-start), var(--primary-gradient-end));
+    box-shadow: 0 1px 20px 4px var(--shadow-color);
+}
+
+.project-item {
+    max-width: 800px;
+}
+
+.project-title {
+    text-align: center;
+}
+
+li {
+    padding: 8px 0px;
+}
