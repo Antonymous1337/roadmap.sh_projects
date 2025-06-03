@@ -1,6 +1,6 @@
 # HTML-Only Single Page CV
 
-A simple HTML-Only Single Page CV based on the project description in roadmap.sh. https://roadmap.sh/projects/single-page-cv
+A simple HTML-Only Single Page CV based on the project description in <a href="https://roadmap.sh/projects/single-page-cv">roadmap.sh</a>.
 
 The requirements are as follows:
 - Make the website look like a provided image
