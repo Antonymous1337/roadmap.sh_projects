@@ -9,6 +9,6 @@ The requirements are as follows:
 - Use Open Graph (OG) Tags for better social media sharing
 - Use a Favicon
 
-Estimated Time: 30 minutes
+<a href="https://antonymous1337.github.io/roadmap.sh_projects/001.%20Single%20Page%20CV/index.html" target="_blank">Access it here</a>
 
 ![image](https://github.com/user-attachments/assets/63d368f2-817d-4ac0-92a2-1af52291b40b)

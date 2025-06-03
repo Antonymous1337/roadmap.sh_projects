@@ -6,4 +6,10 @@ While AI is changing the coding landscape and I fully support the cautious use o
 
 If you find my work interesting, please contact me at <a href="mailto:holshouserantony@yahoo.com" target="_blank">holshouserantony@yahoo.com</a>, and I would be more than glad to help however I can.
 
+<<<<<<< HEAD
 The above email link may not work if you don't have a default email handler for your device set up. If that is the case, you may simply copy-and-paste the email.
+=======
+The above email link may not work if you don't have a default email handler for your device set up.
+
+To access the home page for all of these projects, <a href="https://antonymous1337.github.io/roadmap.sh_projects/" target="_blank">you can find it here</a>.
+>>>>>>> 81a47ca5594fcfe3f0509be6129ea8d121f43475
