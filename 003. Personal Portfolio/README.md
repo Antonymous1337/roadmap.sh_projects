@@ -1,4 +1,4 @@
-# HTML-Only Portfolio Website
+# Basic Portfolio Website
 
 A simple Portfolio Website based on the project description in <a href="https://roadmap.sh/projects/portfolio-website" target="_blank">roadmap.sh</a>.
 
