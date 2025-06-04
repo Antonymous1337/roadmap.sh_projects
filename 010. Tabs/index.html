@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antony's Tabs Implementation</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        html, body {
+            width: 100%;
+            height: 100vh;
+        }
+        html {
+            overflow: hidden;
+        }
+        body {
+            overflow: auto;
+        }
+        main {
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(to bottom right, rgb(117, 225, 255), rgb(0, 157, 255));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .island {
+            display: flex;
+            flex-direction: column;
+            padding: 16px;
+            border-radius: 16px;
+            background-color: white;
+            box-shadow: 4px 4px 8px 2px rgb(0, 0, 0, 0.5);
+            max-width: 80%;
+            gap: 16px;
+        }
+        nav {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 16px;
+        }
+        @media screen and (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                padding-bottom: 32px;
+            }
+        }
+
+        .selected {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+    </style>
+    <script>
+        var prevTabIndex = 1
+        function onTabClick(curTabIndex) {
+            const prevNavID = "nav-" + prevTabIndex;
+            const prevNavElement = document.getElementById(prevNavID);
+            prevNavElement.classList.remove("selected")
+
+            const prevTabID = "tab-" + prevTabIndex;
+            const prevTabElement = document.getElementById(prevTabID);
+            prevTabElement.hidden = true
+
+            const curNavID = "nav-" + curTabIndex;
+            const curNavElement = document.getElementById(curNavID);
+            curNavElement.classList.add("selected")
+
+            const curTabID = "tab-" + curTabIndex;
+            const curTabElement = document.getElementById(curTabID);
+            curTabElement.hidden = false;
+
+            prevTabIndex = curTabIndex
+
+        }
+
+        
+    </script>
+</head>
+<body>
+    <main>
+        <div class="island">
+            <nav>
+                <p id="nav-1" class="selected" onclick="onTabClick(1)">First Tab</p>
+                <p id="nav-2" onclick="onTabClick(2)">Second Tab</p>
+                <p id="nav-3" onclick="onTabClick(3)">Third Tab</p>
+                <p id="nav-4" onclick="onTabClick(4)">Fourth Tab</p>
+            </nav>
+            <div id="tab-1">
+                <p>Tab Content 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</p>
+            </div>
+            <div id="tab-2" hidden>
+                <p>Tab Content 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2</p>
+            </div>
+            <div id="tab-3" hidden>
+                <p>Tab Content 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3</p>
+            </div>
+            <div id="tab-4" hidden>
+                <p>Tab Content 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4</p>
+            </div>
+        </div>
+        
+    </main>
+</body>
+</html>
