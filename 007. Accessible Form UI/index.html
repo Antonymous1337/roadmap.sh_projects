@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antony's Accessible Form UI</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        html, body {
+            width: 100%;
+            height: 100vh;
+            font-size: large;
+        }
+        body {
+            position: fixed;
+            overflow: hidden;
+        }
+        .background {
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(to bottom right, rgb(97, 197, 255), rgb(0, 110, 255));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .form-container {
+            display: flex;
+            justify-content: space-between;
+            background-color: white;
+            box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.459);
+            padding: 32px;
+            border-radius: 16px;
+            gap: 16px;
+        }
+        .form-inputs {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+        .form-input {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .progress-meter {
+            height: 100px;
+            width: 100px;
+            display: grid;
+            justify-items: center;
+            align-items: center;
+        }
+        .full-progress-meter, .completed-progress-meter, .progress-text {
+            grid-row: 1;
+            grid-column: 1;
+        }
+        .full-progress-meter, .completed-progress-meter {
+            height: 80%;
+            width: 80%;
+            border-radius: 35px;
+        }
+        .full-progress-meter {
+            --b: 2px; /* the boder thickness */
+            --a: 360deg; /* control the progression */
+            border: 2px solid grey;
+            padding: var(--b);
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background: #0000;
+            --_g:/var(--b) var(--b) no-repeat
+                radial-gradient(50% 50%,#000 97%,#0000);
+            mask: top var(--_g),
+                calc(50% + 50%*sin(var(--a))) 
+                calc(50% - 50%*cos(var(--a))) var(--_g),
+                linear-gradient(#0000 0 0) content-box intersect,
+                conic-gradient(#000 var(--a),#0000 0);
+        }
+        .completed-progress-meter {
+            --b: 4px; /* the boder thickness */
+            --a: calc((360deg / 100) * 60); /* control the progression */
+            border: 5px solid black;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background: #0000;
+            --_g:/var(--b) var(--b) no-repeat
+                radial-gradient(50% 50%,#000 97%,#0000);
+            mask: top var(--_g),
+                calc(50% + 50%*sin(var(--a))) 
+                calc(50% - 50%*cos(var(--a))) var(--_g),
+                linear-gradient(#0000 0 0) content-box intersect,
+                conic-gradient(#000 var(--a),#0000 0);
+            transform: scaleX(-1)
+        }
+        .profile-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            box-sizing: border-box;
+            padding: 16px;
+            border: 1px solid black;
+            border-radius: 16px;
+            background-color: rgb(240, 240, 240);
+        }
+        .completed {
+            text-decoration: line-through;
+            color: rgb(78, 78, 78)
+        }
+
+        input:focus {
+            outline: 1px solid rgb(53, 188, 255);
+            box-shadow: 0px 0px 8px 2px rgb(170, 221, 255);
+            background-color: rgb(216, 254, 255);
+        }
+
+        .inline {
+            display: inline;
+        }
+
+        .visually-hidden {
+            position: absolute;
+            overflow: hidden;
+            clip: rect(0 0 0 0);
+            height: 1px; width: 1px;
+            margin: -1px; padding: 0; border: 0;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="background">
+            <div class="form-container">
+                <form class="form-inputs" action="" method="POST">
+
+                    <div class="form-input">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" required aria-describedby="fullNameErrorMessage" autocomplete="fullName">
+                        <p id="fullNameErrorMessage"></p>
+                    </div>
+
+                    <div class="form-input">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required aria-describedby="emailErrorMessage" autocomplete="email">
+                        <p id="emailErrorMessage"></p>
+                    </div>
+
+                    <div class="form-input">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required aria-describedby="passwordErrorMessage" autocomplete="company-specific-password">
+                        <p id="passwordErrorMessage"></p>
+                    </div>
+
+                    <div class="form-input">
+                        <label for="passwordConfirm">Confirm Password</label>
+                        <input type="password" id="passwordConfirm" name="passwordConfirm" required aria-required aria-describedby="passwordConfirmErrorMessage" autocomplete="company-specific-password-confirmation">
+                        <p id="passwordConfirmErrorMessage"></p>
+                    </div>
+
+                    <input type="submit">
+                </form>
+                <div class="form-info">
+                    <data class="progress-meter">
+                        <div class="full-progress-meter"></div>
+                        <div class="completed-progress-meter"></div>
+                        <p class="progress-text">60%</p>
+                    </data>
+                    <p>Profile Completeness</p>
+                    <div class="profile-steps">
+                        <p class="completed">Create Account</p>
+                        <p class="completed">Update Roadmap Progress</p>
+                        <p class="completed">Setup Public Profile</p>
+                        <p>Complete your first project</p>
+                        <p>Invite your Friends</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
