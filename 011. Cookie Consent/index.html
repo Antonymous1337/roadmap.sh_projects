@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antony's Cookie Consent</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        html, body, main {
+            width: 100%;
+            height: 100vh;
+        }
+        html {
+            overflow: hidden;
+        }
+        body {
+            overflow: auto;
+        }
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: linear-gradient(to bottom right, rgb(120, 201, 255), rgb(0, 119, 255));
+        }
+        .island {
+            padding: 16px;
+            border-radius: 16px;
+            background-color: white;
+            max-width: 80%;
+        }
+        #cookie-consent-banner {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 16px;
+        }
+        #cookie-consent-banner > button {
+            border-radius: 8px;
+        }
+        #cookie-consented-content {
+            width: 100%;
+            text-align: center;
+        }
+        .hidden {
+            display: none;
+        }
+        .hidden * {
+            display: none;
+        }
+    </style>
+    <script>
+        function cookieConsent() {
+            let consentBanner = document.getElementById("cookie-consent-banner");
+            let consentedContent = document.getElementById("cookie-consented-content");
+
+            consentBanner.classList.add("hidden")
+            consentedContent.classList.remove("hidden")
+            localStorage.setItem("cookieConsent", "true")
+            console.log(consentBanner)
+            console.log(consentedContent)
+            console.log(localStorage.getItem("cookieConsent"))
+        }
+
+        document.addEventListener("DOMContentLoaded", function() { 
+            if (localStorage.getItem("cookieConsent") == "true") {
+                cookieConsent()
+            }
+        })
+        
+    </script>
+</head>
+<body>
+    <main>
+        <div class="island">
+            <div id="cookie-consent-banner">
+                <p>Please Consent to Cookies!</p>
+                <button onclick="cookieConsent()">Consent</button>
+            </div>
+            <div id="cookie-consented-content" class="hidden">
+                <p>You have consented to cookies, HOORAY!</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
