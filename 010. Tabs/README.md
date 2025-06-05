@@ -8,6 +8,8 @@ The requirements are as follows:
 - Navigation should indicate selected tab
 - Content should change on tab select
 
+<a href="https://antonymous1337.github.io/roadmap.sh_projects/010.%20Tabs/index.html">Access it here</a>
+
 <table>
   <tr>
     <td><img src="https://github.com/user-attachments/assets/4c1dc6cf-d165-4c3e-80f6-5a0693d03615"></td>
