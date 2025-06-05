@@ -7,4 +7,12 @@ The requirements are as follows:
 - Local Storage for Caching the consent
 - DOMContentLoaded Event Listener
 
-<a href="./index.html">Access it here</a>
+<a href="https://antonymous1337.github.io/roadmap.sh_projects/011.%20Cookie%20Consent/index.html">Access it here</a>
+
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/11bd4762-86a2-44cb-8cc8-4fb5d3ed6dc9"></td>
+    <td><img src="https://github.com/user-attachments/assets/e612330d-1a0b-4555-9fcb-5225df1bd6f6"></td>
+  </tr>
+</table>
+
